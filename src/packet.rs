@@ -28,7 +28,7 @@ impl TCPPacket {
   pub fn get_dest(&self) -> u16 {
     u16::from_be_bytes([
       self.buffer[2],
-      self.buffer[4],
+      self.buffer[3],
     ])
   }
 
