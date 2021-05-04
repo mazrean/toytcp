@@ -116,7 +116,8 @@ impl Socket {
     let sent_size = self
       .sender
       .send_to(tcp_packet.clone(), IpAddr::V4(self.remote_addr))
-      .unwrap();
+      .context(format!("failed to send: \n{:?}", tcp_packet))?;
+    dbg!("sent", &tcp_packet);
     Ok(sent_size)
   }
 
