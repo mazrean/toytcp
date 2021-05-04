@@ -12,5 +12,5 @@ fn main() -> Result<()> {
 fn echo_client(remote_addr: Ipv4Addr, remote_port: u16) -> Result<()> {
   let tcp = TCP::new();
   let _ = tcp.connect(remote_addr, remote_port)?;
-  Ok(());
+  Ok(())
 }

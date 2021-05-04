@@ -34,7 +34,7 @@ impl TCP {
     Ok(33445)
   }
 
-  fn connect(&self, addr: Ipv4Addr, port: u16) -> Result<SockID> {
+  pub fn connect(&self, addr: Ipv4Addr, port: u16) -> Result<SockID> {
     let mut rng = rand::thread_rng();
     let mut socket = Socket::new(
       get_source_addr_to(addr)?,
